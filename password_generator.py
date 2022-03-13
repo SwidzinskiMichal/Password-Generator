@@ -9,5 +9,3 @@ def password_generator(pass_length = 8):
         password += chr(random.choice(characters_range))
     
     return password
-
-print(password_generator())
