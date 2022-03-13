@@ -1,17 +1,13 @@
 import random
 
-characters_range = range(33, 127)
-password = ''
 
-while True:
-    pass_length = int(input("How long should the password be? (Can not be shorter than 8 signs)"))
-    if pass_length < 8:
-        print("Sorry, password has to be at least 8 signs long.")
-        continue
-    else:
-        break
+def password_generator(pass_length = 8):
 
-for i in range(pass_length):
-    password += chr(random.choice(characters_range))
+    characters_range = range(33, 127)
+    password = ''
+    for i in range(pass_length):
+        password += chr(random.choice(characters_range))
+    
+    return password
 
-print("Your password is: ", password)
+print(password_generator())
