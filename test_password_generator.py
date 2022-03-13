@@ -1,5 +1,6 @@
 import pytest
-from password_generator import PasswordTooLongException, PasswordTooShortException, password_generator
+from password_generator import password_generator
+from exceptions import PasswordTooLongException, PasswordTooShortException
 
 def test_password_default_length():
     assert len(password_generator()) == 8
@@ -11,4 +12,3 @@ def test_password_too_short():
 def test_password_too_long():
     with pytest.raises(PasswordTooLongException):
         password_generator(33)
-        
