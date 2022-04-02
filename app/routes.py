@@ -1,3 +1,5 @@
+from flask import escape
+
 from app import app
 from app.password_generator import password_generator
 
@@ -5,4 +7,4 @@ from app.password_generator import password_generator
 def generate_password():
     password = password_generator()
     print(password)
-    return "Your password is: " + password
+    return escape("Your password is: " + password)
