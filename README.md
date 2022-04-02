@@ -4,10 +4,20 @@
 - Function produces a password comrpised of random characters (excluding unicode characters) of no less than 8 and no more than 32 characters.\
 No additional conditions needs to be satisfied. The main program imports the test_password_generator.py and exceptions.py.
 ## Getting Started
+### Setup
+This project is using Makefile. To see all available commands run:
+```
+make
+
+help                           Shows a list of commands with short descriptions
+install                        Installs project requirements
+setup                          Setup project
+start                          Starts Flask server
+test                           Run tests
+```
 ### Dependencies
-- Python 3.10
+- Python 3.8
+- Make 
 - Additional requirements in requirements.txt
-### Executing program
-- Not applicable
 ### Authors
 - Michał Świdziński
