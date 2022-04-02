@@ -13,4 +13,4 @@ test:	## Run tests
 	pytest
 
 start:	## Starts Flask server
-	FLASK_ENV=development FLASK_APP=app.py flask run 
+	FLASK_ENV=development FLASK_APP=app flask run 

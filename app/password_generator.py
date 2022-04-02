@@ -1,5 +1,5 @@
 import random
-from exceptions import PasswordTooLongException, PasswordTooShortException
+from app.exceptions import PasswordTooLongException, PasswordTooShortException
 
 def password_generator(pass_length = 8):
     if pass_length < 8:
