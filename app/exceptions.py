@@ -4,3 +4,4 @@ class PasswordTooShortException(Exception):
 
 class PasswordTooLongException(Exception):
     pass
+
