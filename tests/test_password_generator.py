@@ -14,7 +14,10 @@ def test_password_too_long():
         password_generator(33)
 
 def test_password_no_lower():
-        assert all(password_char.isupper for password_char in password_generator())
+        assert any(password_char.islower for password_char in password_generator())
 
 def test_password_no_upper():
-        assert all(password_char.islower for password_char in password_generator())
+        assert any(password_char.isupper for password_char in password_generator())
+
+def test_password_no_digit():
+        assert any(password_char.isdigit for password_char in password_generator())
