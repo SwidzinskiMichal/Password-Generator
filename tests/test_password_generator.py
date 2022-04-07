@@ -13,11 +13,11 @@ def test_password_too_long():
     with pytest.raises(PasswordTooLongException):
         password_generator(33)
 
-def test_password_no_lower():
+def test_password_contains_one_lower():
         assert any(password_char.islower for password_char in password_generator())
 
-def test_password_no_upper():
+def test_password_contains_one_upper():
         assert any(password_char.isupper for password_char in password_generator())
 
-def test_password_no_digit():
+def test_password_contains_one_digit():
         assert any(password_char.isdigit for password_char in password_generator())

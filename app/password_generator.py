@@ -11,13 +11,15 @@ def password_generator(pass_length = 8):
         raise PasswordTooLongException
 
 
-    characters_range = range(33, 127)
     password = []
+    charsets = [string.ascii_uppercase, string.ascii_lowercase, string.digits]
 
-    password += random.choice(string.ascii_uppercase) + random.choice(string.ascii_lowercase) + random.choice(string.digits)
+    for charset in charsets:
+        password += random.choice(charset)
+
 
     for i in range(pass_length - 3):
-        password += chr(random.choice(characters_range))    
+        password += random.choice("".join(charsets))
 
     random.shuffle(password)
     password_string = ''.join(password)
