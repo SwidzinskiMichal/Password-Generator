@@ -1,3 +1,5 @@
+from string import punctuation
+import string
 import pytest
 from app.password_generator import password_generator
 from app.exceptions import PasswordTooLongException, PasswordTooShortException
@@ -21,3 +23,7 @@ def test_password_contains_one_upper():
 
 def test_password_contains_one_digit():
         assert any(password_char.isdigit for password_char in password_generator())
+
+def test_password_contains_one_punctuation():
+        assert any(password_char in string.punctuation for password_char in password_generator())
+                

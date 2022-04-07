@@ -12,13 +12,13 @@ def password_generator(pass_length = 8):
 
 
     password = []
-    charsets = [string.ascii_uppercase, string.ascii_lowercase, string.digits]
+    charsets = [string.ascii_uppercase, string.ascii_lowercase, string.digits, string.punctuation]
 
     for charset in charsets:
         password += random.choice(charset)
 
 
-    for i in range(pass_length - 3):
+    for i in range(pass_length - 4):
         password += random.choice("".join(charsets))
 
     random.shuffle(password)
