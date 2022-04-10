@@ -9,11 +9,11 @@ def test_password_default_length():
 
 def test_password_too_short():
     with pytest.raises(PasswordTooShortException):
-        password_generator(5)
+        password_generator(pass_length=5)
 
 def test_password_too_long():
     with pytest.raises(PasswordTooLongException):
-        password_generator(33)
+        password_generator(pass_length=33)
 
 def test_password_contains_one_lower():
         assert any(password_char.islower for password_char in password_generator())
