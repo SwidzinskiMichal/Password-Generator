@@ -22,7 +22,6 @@ def password_generator(charset_chosen = ["uppercase", "lowercase", "digit", "spe
     
     for charset in charset_chosen:
         charsets.append(password_string_dict[charset])
-    print(charsets)
 
     for charset in charsets:
         password += random.choice(charset)
