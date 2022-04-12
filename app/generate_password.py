@@ -2,7 +2,7 @@ import random
 import string
 from app.exceptions import PasswordTooLongException, PasswordTooShortException
 
-def password_generator(charset_chosen = ["uppercase", "lowercase", "digit", "special"], pass_length = 8):
+def generate_password(charset_chosen = ["uppercase", "lowercase", "digit", "special"], pass_length = 8):
 
     if pass_length < 8:
         raise PasswordTooShortException
