@@ -29,9 +29,8 @@ def generate_password(charset_chosen=VALID_CHARSETS, pass_length=8):
     if charset_chosen == []:
         raise EmptyCharsetException
 
-    for charset in charset_chosen:
-        if charset not in VALID_CHARSETS:
-            raise InvalidCharsetException
+    if not set(charset_chosen).issubset(VALID_CHARSETS):
+        raise InvalidCharsetException
     
     for charset in charset_chosen:
         charsets.append(password_string_dict[charset])

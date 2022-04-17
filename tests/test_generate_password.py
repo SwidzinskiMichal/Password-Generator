@@ -24,6 +24,10 @@ def test_invalid_charset():
     with pytest.raises(InvalidCharsetException):
         generate_password(charset_chosen=["invalid charset"], pass_length=8)
 
+def test_valid_and_invalid_charset():
+    with pytest.raises(InvalidCharsetException):
+        generate_password(charset_chosen=["invalid charset", "digits"], pass_length=8)
+
 def test_password_contains_one_lower():
         assert any(password_char.islower for password_char in generate_password())
 
