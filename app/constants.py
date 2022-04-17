@@ -1,0 +1,1 @@
+VALID_CHARSETS = ["uppercase", "lowercase", "digit", "special"]

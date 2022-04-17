@@ -5,3 +5,10 @@ class PasswordTooShortException(Exception):
 class PasswordTooLongException(Exception):
     pass
 
+
+class InvalidCharsetException(Exception):
+    pass
+
+
+class EmptyCharsetException(Exception):
+    pass
