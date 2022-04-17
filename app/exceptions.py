@@ -8,3 +8,7 @@ class PasswordTooLongException(Exception):
 
 class InvalidCharsetException(Exception):
     pass
+
+
+class EmptyCharsetException(Exception):
+    pass
