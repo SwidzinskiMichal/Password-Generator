@@ -30,7 +30,9 @@ def generate_password(charset_chosen=VALID_CHARSETS, pass_length=8):
         raise EmptyCharsetException
 
     if not set(charset_chosen).issubset(VALID_CHARSETS):
-        raise InvalidCharsetException
+        raise InvalidCharsetException(
+            f"Valid charsets are: {VALID_CHARSETS}"  
+        )
     
     for charset in charset_chosen:
         charsets.append(password_string_dict[charset])
