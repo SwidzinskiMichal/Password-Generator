@@ -1,5 +1,6 @@
 import random
 import string
+from app.constants import VALID_CHARSETS
 from app.exceptions import (
     PasswordTooLongException, 
     PasswordTooShortException, 
@@ -7,7 +8,7 @@ from app.exceptions import (
     EmptyCharsetException
 )
 
-def generate_password(charset_chosen=["uppercase", "lowercase", "digit", "special"], pass_length=8):
+def generate_password(charset_chosen=VALID_CHARSETS, pass_length=8):
 
     if pass_length < 8:
         raise PasswordTooShortException
@@ -28,9 +29,8 @@ def generate_password(charset_chosen=["uppercase", "lowercase", "digit", "specia
     if charset_chosen == []:
         raise EmptyCharsetException
 
-    charset_template = ["uppercase", "lowercase", "digit", "special"]
     for charset in charset_chosen:
-        if charset not in charset_template:
+        if charset not in VALID_CHARSETS:
             raise InvalidCharsetException
     
     for charset in charset_chosen:
